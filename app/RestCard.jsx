@@ -7,7 +7,11 @@ export default function RestCard({restaurant}) {
     return(
         
             <View style={styles.card}>
-                <Image style={styles.image} src={restaurant.photo_url} />
+                <Image style={styles.image}
+                    source={{
+                        uri: restaurant.photo_url,
+                        cache: 'force-cache',
+                    }} />
                 <Text style={styles.title}>{restaurant.name}</Text>
             </View>
 
@@ -20,16 +24,34 @@ const styles = StyleSheet.create({
         width: 300,
         height: 200,
         borderRadius: 6,
+        borderColor: 'gray',
+        borderStyle: 'solid',
+        borderWidth: 3,
+        alignItems: "center",
     },
     card:{
         padding: 8,
         margin: 8,
         borderRadius: 12,
-        backgroundColor: '#e9eeff',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.51,
+
+elevation: 7,
+
+elevation: 9,
+
+        
     },
     title: {
         color: '#203040',
         fontSize: 28,
         textAlign: 'center',
+        fontWeight: 700,
+        marginTop: 12,
     },
 })

@@ -15,11 +15,11 @@ export default function Tray({ setSelectRestaurant }) {
         <View style={styles.tray}>
             <View style={styles.buttonList}>
                 <TouchableOpacity onPress={choose} style={styles.button} >
-                    <Text style={styles.buttonText}>Shuffle</Text>
+                    <Text style={styles.buttonText}>🔀 Shuffle Now</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={clear} style={styles.resetButton} >
-                    <Text style={styles.buttonText}>Reset000</Text>
+                    <Text style={styles.resetButtonText}>🔄 Reset</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -28,19 +28,19 @@ export default function Tray({ setSelectRestaurant }) {
 
 const styles = StyleSheet.create({
     buttonList:{
-        width: '80%',
+        width: '100%',
         flexDirection: 'row',
         justifyContent: "space-evenly",
         
     },
     button:{
-        backgroundColor: "pink",
-        paddingHorizontal: 24,
-        paddingVertical: 8,
-        borderRadius: 4,
+        backgroundColor: "#ed714d",
+        paddingHorizontal: 30,
+        paddingVertical: 10,
+        borderRadius: 20,
         borderStyle: 'solid',
-        borderWidth: 1,
-        borderColor: 'black',
+        borderColor: '#f79477'
+        
     },
 
     buttonText: {
@@ -50,13 +50,21 @@ const styles = StyleSheet.create({
     },
 
     resetButton: {
-        backgroundColor: 'grey',
-        paddingHorizontal: 24,
-        paddingVertical: 8,
-        borderRadius: 4,
+        backgroundColor: 'snow',
+        paddingHorizontal: 30,
+        paddingVertical: 10,
+        borderRadius: 20,
         borderStyle: 'solid',
         borderWidth: 1,
+        color: 'gray',
     },
+
+    resetButtonText: {
+        color: 'dimgray',
+        fontSize: 20,
+        fontWeight: 800,
+    },
+
 
     tray: {
         width: '100%',
@@ -64,6 +72,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#e9eeff',
         alignItems: "center",
         justifyContent: "center",
-        paddingBottom: 10,
+        paddingBottom: 30,
+        height: 120,
+        paddingTop: 30,
+        shadowColor: 'black',
+        shadowOffset: {
+            width: 0,
+            height: -7,
+        },
+        shadowOpacity: 0.08,
+        shadowRadius: 9.51,
+        elevation: 15,
     },
 })
