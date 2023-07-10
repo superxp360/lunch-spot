@@ -13,6 +13,13 @@ export default function RestCard({restaurant}) {
                         cache: 'force-cache',
                     }} />
                 <Text style={styles.title}>{restaurant.name}</Text>
+                <Text style={styles.rating}>
+                    {
+                        (restaurant.rating.length > 0)
+                        ? '⭐️'.repeat(restaurant.rating)
+                        :""
+                    }
+                </Text>
             </View>
 
     )
@@ -40,11 +47,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.29,
         shadowRadius: 4.51,
-
-elevation: 7,
-
-elevation: 9,
-
         
     },
     title: {
@@ -54,4 +56,8 @@ elevation: 9,
         fontWeight: 700,
         marginTop: 12,
     },
+
+    rating: {
+        textAlign: "center",
+    }
 })

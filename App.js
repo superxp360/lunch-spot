@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 60,
-    backgroundColor: 'mistyrose',
+    backgroundColor: 'mistyrose ',
     alignItems: 'center',
     justifyContent: 'start',
     
