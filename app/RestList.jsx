@@ -18,9 +18,9 @@ export default function RestList( {selectRestaurant} ) {
             const index = Math.floor(selectRestaurant * restaurants.length)
             setChosenRestaurant(restaurants[index])
         } else {
-
+            setChosenRestaurant()
         }
-    },[selectRestaurant])
+    },[restaurants, selectRestaurant])
 
     return(
         <>
