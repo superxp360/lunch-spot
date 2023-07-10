@@ -6,12 +6,13 @@ import RestList from './app/RestList';
 
 
 export default function App() {
-  const [selectRestaurant, setSelectRestaurant] = useState(null)
+  const [selectRestaurant, setSelectRestaurant] = useState();
   return (
     <>
     <View style={styles.container}>
-      <Text style={styles.header}>Lunch Spot</Text>
-      <RestList />
+      <Text style={styles.header}>Lunch Spot
+      </Text>
+      <RestList selectRestaurant={selectRestaurant}/>
       <StatusBar style="auto" />
     </View>
     <Tray setSelectRestaurant={setSelectRestaurant}/>

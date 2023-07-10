@@ -2,8 +2,9 @@ import { useState, useEffect } from "react"
 import { ScrollView, StyleSheet, Text} from "react-native"
 import RestCard from "./RestCard"
 
-export default function RestList() {
+export default function RestList( {selectRestaurant} ) {
     const [restaurants, setRestaurants] = useState()
+    const [chosenRestaurant, setChosenRestaurant] = useState()
 
     useEffect(() => {
         fetch('https://api.bocacode.com/api/restaurants')
@@ -11,13 +12,26 @@ export default function RestList() {
         .then(setRestaurants)
         .catch(alert)
     }, [])
+
+    useEffect(() => {
+        if(selectRestaurant > 0) {
+            const index = Math.floor(selectRestaurant * restaurants.length)
+            setChosenRestaurant(restaurants[index])
+        } else {
+
+        }
+    },[selectRestaurant])
+
     return(
         <>
             <ScrollView style={styles.scrollingList}>
                 {!restaurants
-                 ? <Text style={styles.loadingText}>Loading...</Text>
-                 :restaurants.map(restaurant => (
-                    <RestCard key={restaurant._id} restaurant={restaurant} />
+                 ?<Text style={styles.loadingText}>Loading....</Text>
+                 :(chosenRestaurant)
+                    ? <RestCard key={chosenRestaurant._id} restaurant={chosenRestaurant} />
+                    : restaurants.map(restaurant => (
+                        <RestCard key={restaurant._id} restaurant={restaurant} />
+                    
                  ))
                 }
             </ScrollView>
